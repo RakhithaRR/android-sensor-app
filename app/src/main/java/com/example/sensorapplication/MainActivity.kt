@@ -45,12 +45,16 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
     }
 
     override fun onSensorChanged(event: SensorEvent) {
-        resultsTextView.text = "X : \t${event.values[0]} \n\n" +
-                "Y : \t${event.values[1]} \n\n" +
-                "Z : \t${event.values[2]} \n\n"
+        var x = String.format("%.4f", event.values[0])
+        var y = String.format("%.4f", event.values[1])
+        var z = String.format("%.4f", event.values[2])
+
+        resultsTextView.text = "X : \t${x} \n\n" +
+                "Y : \t${y} \n\n" +
+                "Z : \t${z} \n\n"
     }
 
     override fun onAccuracyChanged(p0: Sensor?, p1: Int) {
-        
+
     }
 }
